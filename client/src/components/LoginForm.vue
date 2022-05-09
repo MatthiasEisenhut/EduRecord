@@ -1,6 +1,9 @@
 <template>
-  <form>
-    <div class="mb-6">
+  <div
+    class="py-10 px-24 bg-white rounded-3xl w-4/12 flex flex-col max-h-fit mt-6 mb-5 justify-center"
+  >
+    <img src="../assets/logo.jpeg" alt="" height="300" width="300" />
+    <div class="mt-6 mb-6">
       <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
         >Email address</label
       >
@@ -25,17 +28,17 @@
       />
     </div>
 
-    <button
-      type="submit"
+    <router-link
+      to="/home"
       class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
     >
       Login
-    </button>
-  </form>
-  <label for="" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-400">
-    Don't have an account? Request one
-    <a href="#" class="text-blue-600 hover:underline">here</a></label
-  >
+    </router-link>
+    <label for="" class="mt-3 text-sm font-medium text-gray-900 dark:text-gray-400">
+      Don't have an account? Request one
+      <a href="#" class="text-blue-600 hover:underline">here</a></label
+    >
+  </div>
 </template>
 
 <script setup>
