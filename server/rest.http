@@ -1,6 +1,6 @@
 GET http://localhost:3000/edurec/students
 ################################################################
-DELETE http://localhost:3000/edurec/students/3
+DELETE http://localhost:3000/edurec/students/20
 ################################################################
 POST http://localhost:3000/edurec/students
 Content-Type: application/json
@@ -9,12 +9,12 @@ Content-Type: application/json
   "firstname": "Max",
   "lastname": "Mustermann",
   "dob": "2004-05-04",
-  "class": "4.BHITM",
+  "className": "4.BHITM",
   "date_of_enrollment": "2018-09-01",
   "expected_date_of_graduation": "2023-06-30"
 }
 ################################################################
-PATCH http://localhost:3000/edurec/students/5
+PATCH http://localhost:3000/edurec/students/21
 Content-Type: application/json
 
 {

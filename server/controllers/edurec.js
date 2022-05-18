@@ -5,7 +5,7 @@ import {
   dbDeleteStudent,
   dbPostStudent,
   dbPatchStudent,
-} from ' ../models/edurec.js';
+} from '../models/edurec.js';
 
 const validate = validator({
   required: true,
@@ -21,7 +21,7 @@ const validate = validator({
     },
     dob: {
       required: true,
-      type: 'date',
+      type: 'string',
     },
     className: {
       required: true,
@@ -29,11 +29,11 @@ const validate = validator({
     },
     date_of_enrollment: {
       required: true,
-      type: 'date',
+      type: 'string',
     },
     expected_date_of_graduation: {
       required: true,
-      type: 'date',
+      type: 'string',
     },
   },
 });
@@ -50,13 +50,13 @@ const delStudent = async (req, res) => {
 
 const postStudent = async (req, res) => {
   if (!validate(req.body)) return res.status(400).json(validate.errors);
-  const student = await dbPostSight(req.body);
+  const student = await dbPostStudent(req.body);
   return res.status(200).json(student);
 };
 
 const patchStudent = async (req, res) => {
   const { id } = req.params;
-  const student = await dbPatchSight(id, req.body.date_of_graduation);
+  const student = await dbPatchStudent(id, req.body.date_of_graduation);
   if (!student) return res.status(404).send('Ressource not found');
   return res.status(200).json(student);
 };

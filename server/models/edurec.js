@@ -6,12 +6,12 @@ const dbGetStudents = async () => {
 };
 
 const dbGetStudent = async (id) => {
-  const { rows } = await query('SELECT * FROM student WHERE id = $1', [id]);
+  const { rows } = await query('SELECT * FROM student WHERE stu_id = $1', [id]);
   return rows[0];
 };
 
 const dbDeleteStudent = async (id) => {
-  query('DELETE FROM sights WHERE id = $1', [id]);
+  query('DELETE FROM student WHERE stu_id = $1', [id]);
 };
 
 const dbPostStudent = async ({
@@ -33,10 +33,10 @@ const dbPatchStudent = async (id, date_of_graduation) => {
   const client = await pool.connect();
   try {
     await client.query('BEGIN');
-    const { rows } = await client.query('SELECT * FROM student WHERE id = $1', [id]);
+    const { rows } = await client.query('SELECT * FROM student WHERE stu_id = $1', [id]);
     if (!rows[0]) return null;
     const res = await client.query(
-      'UPDATE student SET date_of_graduation = $1 WHERE id = $2 RETURNING *',
+      'UPDATE student SET date_of_graduation = $1 WHERE stu_id = $2 RETURNING *',
       [date_of_graduation, id],
     );
     await client.query('COMMIT');
