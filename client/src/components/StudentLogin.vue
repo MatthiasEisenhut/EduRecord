@@ -16,7 +16,7 @@
       <q-toggle v-model="accept" label="I accept the license and terms" />
 
       <div>
-        <q-btn label="Submit" type="submit" color="primary" />
+        <q-btn label="Submit" type="submit" color="primary" @click="router.push('/student')" />
         <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
       </div>
     </q-form>
@@ -26,8 +26,11 @@
 <script setup>
 import { useQuasar } from 'quasar';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 const $q = useQuasar();
+
+const router = useRouter();
 
 const email = ref(null);
 const password = ref(null);
