@@ -1,7 +1,18 @@
 import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+
+import { Quasar } from 'quasar';
+import '@quasar/extras/material-icons/material-icons.css';
+import 'quasar/src/css/index.sass';
+
 import App from './App.vue';
-import router from './router/index.js';
+import router from './router';
 
-import './index.css';
+const app = createApp(App);
 
-createApp(App).use(router).mount('#app');
+app.use(createPinia());
+app.use(router);
+
+app.use(Quasar);
+
+app.mount('#app');

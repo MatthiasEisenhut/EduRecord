@@ -1,12 +1,8 @@
-# vv3-template-CT
+# vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
-It uses Composition API, Tailwind and FontAwesome.
+This template uses Vue 3, Vite, Vue-Router, Pinia, and Quasar.
 
-Usage:
-```
-npx degit robert-baumgartner/vv3-template-CT your-project
-```
+07.05.2022: Fixed ESLint top level await warning
 
 ## Recommended IDE Setup
 
