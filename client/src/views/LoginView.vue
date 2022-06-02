@@ -1,6 +1,6 @@
 <template>
-  <div class="q-pa-md bg">
-    <div class="q-gutter-y-md" style="max-width: 600px">
+  <div class="q-pa-md bg fit row wrap justify-center items-start content-start">
+    <div class="q-gutter-y-md log">
       <q-card>
         <q-tabs
           v-model="tab"
@@ -42,8 +42,8 @@
 <script setup>
 import StudentLogin from '@/components/StudentLogin.vue';
 import TeacherLogin from '@/components/TeacherLogin.vue';
-import { ref } from 'vue';
 import WelcomeComp from '../components/WelcomeComp.vue';
+import { ref } from 'vue';
 
 const tab = ref('welcome');
 </script>
@@ -51,5 +51,14 @@ const tab = ref('welcome');
 <style scoped>
 .bg {
   background-image: url('@/assets/Hero-Top-Image-1.webp');
+  min-height: 44.8rem;
+}
+
+.log {
+  overflow: auto;
+  min-height: 600px;
+  max-height: 600px;
+  min-width: 600px;
+  max-width: 600px;
 }
 </style>
